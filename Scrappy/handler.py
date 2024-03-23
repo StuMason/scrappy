@@ -8,8 +8,11 @@ def handle(event, context):
     try:
         endpoint = event["endpoint"]
         content = scrape_website(endpoint)
+        # save content to a file
+        print(content)
+        exit()
         soup = BeautifulSoup(content, features="html.parser")
-        links = get_links(soup, endpoint)
+        links = get_tee_times(soup, endpoint)
         # reduce links array to 10
         links = links[:10]
         for link in links:
@@ -43,12 +46,14 @@ def scrape_website(endpoint):
     return source
 
 
-def get_links(content, endpoint):
-    links = []
+def get_tee_times(content, endpoint):
+    tee_times = []
 
-    for link in content.find_all('a', href=True):
-        text = link.get_text()
-        href = link['href']
+    for time in content.find_all('div', content.find_all("div", class_="tee available")):
+        print(time)
+        exit()
+        text = time.get_text()
+        href = time['href']
 
         if len(text.split()) < 4:
             continue
@@ -60,9 +65,9 @@ def get_links(content, endpoint):
         if not href.startswith(endpoint):
             href = endpoint + href
 
-        links.append({
+        tee_times.append({
             "text": text,
             "href": href
         })
 
-    return links
+    return tee_times

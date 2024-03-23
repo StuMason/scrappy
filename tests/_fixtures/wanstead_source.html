@@ -1,0 +1,2940 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="msapplication-tap-highlight" content="no" />
+    <title>Tee Sheet - ClubV1 Hub</title>
+    <link href="/Content/plugin-css?v=RyQvUeTbvNaCOEmdGegNyizED0F0AX3LQZeUnChohzk1" rel="stylesheet" />
+
+    <link href="/Content/site-css?v=4uu1cN2k4EBQRfQNpE7B-4qGtZMWSaLim-dnFnnfLck1" rel="stylesheet" />
+
+
+    <link id="favicon"
+        href="https://clubv1.blob.core.windows.net/clubcrests/928182c7-5f1c-4fc6-b196-55403b862ee9_favicon.ico"
+        rel="shortcut icon" type="image/x-icon" />
+
+
+
+
+    <script src="/bundles/modernizr?v=inCVuEFe6J4Q07A0AcRsbJic_UE5MwpRMNGcOtk94TE1"></script>
+
+
+
+
+
+
+
+
+    <script type='text/javascript'>
+        var appInsights = window.appInsights || function (config) {
+            function r(config) { t[config] = function () { var i = arguments; t.queue.push(function () { t[config].apply(t, i) }) } }
+            var t = { config: config }, u = document, e = window, o = 'script', s = u.createElement(o), i, f; for (s.src = config.url || '//az416426.vo.msecnd.net/scripts/a/ai.0.js', u.getElementsByTagName(o)[0].parentNode.appendChild(s), t.cookie = u.cookie, t.queue = [], i = ['Event', 'Exception', 'Metric', 'PageView', 'Trace', 'Ajax']; i.length;)r('track' + i.pop()); return r('setAuthenticatedUserContext'), r('clearAuthenticatedUserContext'), config.disableExceptionTracking || (i = 'onerror', r('_' + i), f = e[i], e[i] = function (config, r, u, e, o) { var s = f && f(config, r, u, e, o); return s !== !0 && t['_' + i](config, r, u, e, o), s }), t
+        }({
+            instrumentationKey: 'd23d5e16-2344-47f6-b9a4-0864b976f2a3'
+        });
+
+        window.appInsights = appInsights;
+        appInsights.trackPageView();
+    </script>
+
+
+</head>
+
+<body class="vm-visitors-teesheet">
+
+
+
+
+    <div id="cs-nav" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <div class="navbar-header pull-left navbar-width-80">
+                <a href="/" class="navbar-brand unselectable">
+                    <img src="https://clubv1.blob.core.windows.net/clubcrests/928182c7-5f1c-4fc6-b196-55403b862ee9_crestsmall.png"
+                        class="crest crest-sm" />
+
+                </a>
+                <div class="gc-name unselectable theme_text">WansteadGC</div>
+            </div>
+
+
+            <div class="float-right">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="visible-xs-block clearfix"></div>
+
+
+            <div class="navbar-collapse collapse navbar-left">
+                <ul class="nav navbar-nav">
+                    <li><a href="http://www.wansteadgolfclub.com/" target="_blank"><i class="fa fa-mail-reply-all"></i>
+                            <span class="name">Club Website</span></a></li>
+                    <li><a href="/Visitors/Booking"><i class="fa fa-pencil-square"></i> Visitor Booking</a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="global-notifications"></div>
+
+    <div id="page-header" class="container">
+
+        <!-- News and Ads -->
+
+
+
+
+
+
+
+
+        <h2>Tee Sheet</h2>
+
+
+        <style>
+            .progress-tracker {
+                border-bottom: solid 1px #e0e0e0;
+                padding: 0 0 10px 0;
+                margin-top: 10px;
+                margin-bottom: 20px;
+                clear: both;
+            }
+
+            .progress-tracker>.progress-tracker-step {
+                padding: 0;
+                position: relative;
+            }
+
+
+            .progress-tracker>.progress-tracker-step .progress-tracker-info {
+                color: #000;
+                font-size: 14px;
+            }
+
+            .progress-tracker>.progress-tracker-step>.progress-tracker-dot>.progress-tracker-dot-text {
+                color: #ffffff;
+                margin-left: 11px;
+                margin-top: 4px;
+                font-size: 16px;
+                font-weight: 900
+            }
+
+
+            .progress-tracker>.progress-tracker-step>.progress-tracker-dot {
+                position: absolute;
+                width: 30px;
+                height: 30px;
+                display: block;
+                background: #15b115;
+                top: 25px;
+                left: 50%;
+                margin-top: -15px;
+                margin-left: -15px;
+                border-radius: 50%;
+            }
+
+            .progress-tracker>.progress-tracker-step.active>.progress-tracker-dot {
+                background: orange;
+            }
+
+
+            .progress-tracker>.progress-tracker-step>.progress {
+                position: relative;
+                border-radius: 0px;
+                height: 8px;
+                box-shadow: none;
+                margin: 20px 0;
+            }
+
+            .progress-tracker>.progress-tracker-step>.progress>.progress-bar {
+                width: 0px;
+                box-shadow: none;
+                background: #15b115;
+            }
+
+            .progress-tracker>.progress-tracker-step.complete>.progress>.progress-bar {
+                width: 100%;
+            }
+
+            .progress-tracker>.progress-tracker-step.active>.progress>.progress-bar {
+                width: 50%;
+            }
+
+            .progress-tracker>.progress-tracker-step:nth-child(2).active>.progress>.progress-bar {
+                width: 0%;
+            }
+
+            .progress-tracker>.progress-tracker-step:nth-child(6).active>.progress>.progress-bar {
+                width: 100%;
+            }
+
+            .progress-tracker>.progress-tracker-step.disabled>.progress-tracker-dot {
+                background-color: #ddd;
+            }
+
+            .progress-tracker>.progress-tracker-step.disabled>.progress-tracker-dot:after {
+                opacity: 0;
+            }
+
+            .progress-tracker>.progress-tracker-step:nth-child(2)>.progress {
+                left: 50%;
+                width: 50%;
+            }
+
+            .progress-tracker>.progress-tracker-step:nth-child(6)>.progress {
+                width: 50%;
+            }
+        </style>
+
+
+        <div class="container">
+
+
+            <div class="row progress-tracker" style="border-bottom:0;">
+                <div class="col-xs-1"></div>
+                <div id="progress-tracker-step-1" class="col-xs-2 progress-tracker-step complete">
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="progress-tracker-dot">
+                        <div class="progress-tracker-dot-text">1</div>
+                    </div>
+                    <div class="progress-tracker-info text-center hidden-xs">Choose Day</div>
+                </div>
+
+                <div id="progress-tracker-step-2" class="col-xs-2 progress-tracker-step active">
+                    <!-- complete -->
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="progress-tracker-dot">
+                        <div class="progress-tracker-dot-text">2</div>
+                    </div>
+                    <div class="progress-tracker-info text-center hidden-xs">Choose Time</div>
+                </div>
+
+                <div id="progress-tracker-step-3" class="col-xs-2 progress-tracker-step disabled">
+                    <!-- complete -->
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="progress-tracker-dot">
+                        <div class="progress-tracker-dot-text">3</div>
+                    </div>
+                    <div class="progress-tracker-info text-center hidden-xs">Players</div>
+                </div>
+
+                <div id="progress-tracker-step-4" class="col-xs-2 progress-tracker-step disabled">
+                    <!-- active -->
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="progress-tracker-dot">
+                        <div class="progress-tracker-dot-text">4</div>
+                    </div>
+                    <div class="progress-tracker-info text-center hidden-xs">Summary</div>
+                </div>
+                <div id="progress-tracker-step-5" class="col-xs-2 progress-tracker-step disabled">
+                    <!-- active -->
+                    <div class="progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="progress-tracker-dot">
+                        <div class="progress-tracker-dot-text">5</div>
+                    </div>
+                    <div class="progress-tracker-info text-center hidden-xs">Checkout/Finished</div>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- Fixed-top Menu -->
+        <div id="fixed-top-menu">
+            <div class="container">
+
+                <div id="mobile-header" class="visible-xs">
+                    <div class="controls">
+                        <a href="#/" class="theme_text"><i class="fa fa-chevron-left"></i> Back</a>
+                    </div>
+                </div>
+
+
+                <div class="day-selector">
+                    <div class="left btn-sb-cldr">Sat, 23 Mar 2024</div>
+                    <div class="right">
+                        <div class="dropdown dropdown-right">
+                            <a href="https://www.howdidido.com//directory/OpenCompetitions?id=769&amp;fh=1"
+                                class="btn-hdid-opens btn btn-default" type="button">
+                                <i class="fa fa-trophy"></i> <span class="hidden-xs">Opens</span>
+                            </a>
+                            <button href="#/" class="btn-sb-course btn btn-default" type="button">
+                                <i class="fa fa-flag"></i> <span class="hidden-xs">Change Course</span>
+                            </button>
+
+                            <button href="#/" class="btn-sb-cldr btn btn-default" type="button">
+                                <i class="fa fa-calendar"></i> <span class="hidden-xs">Calendar</span>
+                            </button>
+                            <button class="btn btn-default btn-primary dropdown-toggle theme_bg theme_border_primary"
+                                type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="hidden-xs">Options&nbsp; </span><span class="fa fa-arrow-down"></span>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li class="visible-fixed">
+                                    <a href="#/" id="btn-scroll-top">
+                                        <i class="fa fa-arrow-up"></i> Back to top.
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#/" id="btn-next-free-slot">
+                                        <i class="fa fa-play-circle"></i> Find next available slot
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/Account">
+                                        <i class="fa fa-dashboard"></i> Back to dashboard
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div id="page-body" class="container">
+
+
+
+        <input type="hidden" id="teesheet-start-point-1" value="1" />
+        <input type="hidden" id="teesheet-start-point-2" value="1" />
+        <input type="hidden" id="teesheet-current-start-point" value="1" />
+        <input type="hidden" id="teesheet-current-course-Id" value="12570" />
+
+
+        <div id="booking-teesheet-day-selector">
+            <div class="row">
+                <div class="col-xs-2 col-sm-2 col-md-1">
+                    <div class="chevron">
+                        <div class="hidden-xs hidden-sm visible-md visible-lg">
+                            <a href="/Visitors/TeeSheet?date=2024-03-13&amp;courseId=12570">
+                                <i class="fa fa-2x fa-chevron-left theme_text"></i>
+                            </a>
+                        </div>
+
+                        <div class="hidden-md hidden-lg visible-xs visible-sm">
+                            <a href="/Visitors/TeeSheet?date=2024-03-19&amp;courseId=12570">
+                                <i class="fa fa-2x fa-chevron-left theme_text"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hidden-xs hidden-sm visible-md visible-lg">
+                    <div class="col-md-1 today" data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-23&amp;courseId=12570">
+                            <div class="day">
+                                <span>Sat</span><br />
+                                <span class="date">23</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-24&amp;courseId=12570">
+                            <div class="day">
+                                <span>Sun</span><br />
+                                <span class="date">24</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-25&amp;courseId=12570">
+                            <div class="day">
+                                <span>Mon</span><br />
+                                <span class="date">25</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-26&amp;courseId=12570">
+                            <div class="day">
+                                <span>Tue</span><br />
+                                <span class="date">26</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-27&amp;courseId=12570">
+                            <div class="day">
+                                <span>Wed</span><br />
+                                <span class="date">27</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-28&amp;courseId=12570">
+                            <div class="day">
+                                <span>Thu</span><br />
+                                <span class="date">28</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-29&amp;courseId=12570">
+                            <div class="day">
+                                <span>Fri</span><br />
+                                <span class="date">29</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-30&amp;courseId=12570">
+                            <div class="day">
+                                <span>Sat</span><br />
+                                <span class="date">30</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-31&amp;courseId=12570">
+                            <div class="day">
+                                <span>Sun</span><br />
+                                <span class="date">31</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-1 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-04-01&amp;courseId=12570">
+                            <div class="day">
+                                <span>Mon</span><br />
+                                <span class="date">01</span><br />
+                                Apr
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hidden-md hidden-lg visible-xs visible-sm">
+                    <div class="col-xs-2 today" data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-23&amp;courseId=12570">
+                            <div class="day">
+                                <span>Sat</span><br />
+                                <span class="date">23</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-2 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-24&amp;courseId=12570">
+                            <div class="day">
+                                <span>Sun</span><br />
+                                <span class="date">24</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-2 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-25&amp;courseId=12570">
+                            <div class="day">
+                                <span>Mon</span><br />
+                                <span class="date">25</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xs-2 " data-day="1">
+                        <a href="/Visitors/TeeSheet?date=2024-03-26&amp;courseId=12570">
+                            <div class="day">
+                                <span>Tue</span><br />
+                                <span class="date">26</span><br />
+                                Mar
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-xs-2 col-sm-2 col-md-1">
+                    <div class="float_right chevron">
+                        <div class="hidden-xs hidden-sm visible-md visible-lg">
+                            <a href="/Visitors/TeeSheet?date=2024-04-02&amp;courseId=12570">
+                                <i class="fa fa-2x fa-chevron-right theme_text"></i>
+                            </a>
+                        </div>
+
+                        <div class="hidden-md hidden-lg visible-xs visible-sm">
+                            <a href="/Visitors/TeeSheet?date=2024-03-27&amp;courseId=12570">
+                                <i class="fa fa-2x fa-chevron-right theme_text"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h4 class="booking-teesheet-container-course-name">
+            <strong>
+                Wanstead </strong>
+        </h4>
+        <div id="booking-teesheet-container" class="visitor-teesheet">
+
+
+
+
+
+
+
+            <div class="tees">
+
+
+                <div class="tee available" data-hour-val="13" data-min-val="52" data-teetime="2024-03-23 13:52">
+                    <div class="time theme_bg">
+                        13:52
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 13:52"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T13%3A52&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="14" data-min-val="0" data-teetime="2024-03-23 14:00">
+                    <div class="time theme_bg">
+                        14:00
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 14:00"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T14%3A00&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="14" data-min-val="24" data-teetime="2024-03-23 14:24">
+                    <div class="time theme_bg">
+                        14:24
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 14:24"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T14%3A24&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="14" data-min-val="32" data-teetime="2024-03-23 14:32">
+                    <div class="time theme_bg">
+                        14:32
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 14:32"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T14%3A32&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="14" data-min-val="40" data-teetime="2024-03-23 14:40">
+                    <div class="time theme_bg">
+                        14:40
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 14:40"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T14%3A40&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="14" data-min-val="48" data-teetime="2024-03-23 14:48">
+                    <div class="time theme_bg">
+                        14:48
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 14:48"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T14%3A48&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="14" data-min-val="56" data-teetime="2024-03-23 14:56">
+                    <div class="time theme_bg">
+                        14:56
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 14:56"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T14%3A56&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="15" data-min-val="4" data-teetime="2024-03-23 15:04">
+                    <div class="time theme_bg">
+                        15:04
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 15:04"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T15%3A04&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="15" data-min-val="12" data-teetime="2024-03-23 15:12">
+                    <div class="time theme_bg">
+                        15:12
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 15:12"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T15%3A12&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="15" data-min-val="20" data-teetime="2024-03-23 15:20">
+                    <div class="time theme_bg">
+                        15:20
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 15:20"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T15%3A20&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="15" data-min-val="28" data-teetime="2024-03-23 15:28">
+                    <div class="time theme_bg">
+                        15:28
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 15:28"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T15%3A28&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="15" data-min-val="36" data-teetime="2024-03-23 15:36">
+                    <div class="time theme_bg">
+                        15:36
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 15:36"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T15%3A36&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="15" data-min-val="44" data-teetime="2024-03-23 15:44">
+                    <div class="time theme_bg">
+                        15:44
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 15:44"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T15%3A44&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="15" data-min-val="52" data-teetime="2024-03-23 15:52">
+                    <div class="time theme_bg">
+                        15:52
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 15:52"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T15%3A52&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="16" data-min-val="0" data-teetime="2024-03-23 16:00">
+                    <div class="time theme_bg">
+                        16:00
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 16:00"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T16%3A00&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="16" data-min-val="8" data-teetime="2024-03-23 16:08">
+                    <div class="time theme_bg">
+                        16:08
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 16:08"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T16%3A08&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="16" data-min-val="16" data-teetime="2024-03-23 16:16">
+                    <div class="time theme_bg">
+                        16:16
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 16:16"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T16%3A16&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="16" data-min-val="24" data-teetime="2024-03-23 16:24">
+                    <div class="time theme_bg">
+                        16:24
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 16:24"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T16%3A24&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="16" data-min-val="32" data-teetime="2024-03-23 16:32">
+                    <div class="time theme_bg">
+                        16:32
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 16:32"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T16%3A32&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="16" data-min-val="40" data-teetime="2024-03-23 16:40">
+                    <div class="time theme_bg">
+                        16:40
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 16:40"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T16%3A40&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="16" data-min-val="48" data-teetime="2024-03-23 16:48">
+                    <div class="time theme_bg">
+                        16:48
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 16:48"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T16%3A48&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="16" data-min-val="56" data-teetime="2024-03-23 16:56">
+                    <div class="time theme_bg">
+                        16:56
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 16:56"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T16%3A56&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="17" data-min-val="4" data-teetime="2024-03-23 17:04">
+                    <div class="time theme_bg">
+                        17:04
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 17:04"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T17%3A04&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="17" data-min-val="12" data-teetime="2024-03-23 17:12">
+                    <div class="time theme_bg">
+                        17:12
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 17:12"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T17%3A12&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="17" data-min-val="20" data-teetime="2024-03-23 17:20">
+                    <div class="time theme_bg">
+                        17:20
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 17:20"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T17%3A20&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="17" data-min-val="28" data-teetime="2024-03-23 17:28">
+                    <div class="time theme_bg">
+                        17:28
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">30.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">60.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">90.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">120.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 17:28"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T17%3A28&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="17" data-min-val="36" data-teetime="2024-03-23 17:36">
+                    <div class="time theme_bg">
+                        17:36
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 17:36"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T17%3A36&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="17" data-min-val="44" data-teetime="2024-03-23 17:44">
+                    <div class="time theme_bg">
+                        17:44
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 17:44"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T17%3A44&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="17" data-min-val="52" data-teetime="2024-03-23 17:52">
+                    <div class="time theme_bg">
+                        17:52
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 17:52"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T17%3A52&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="18" data-min-val="0" data-teetime="2024-03-23 18:00">
+                    <div class="time theme_bg">
+                        18:00
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 18:00"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T18%3A00&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="18" data-min-val="8" data-teetime="2024-03-23 18:08">
+                    <div class="time theme_bg">
+                        18:08
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 18:08"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T18%3A08&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="18" data-min-val="16" data-teetime="2024-03-23 18:16">
+                    <div class="time theme_bg">
+                        18:16
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 18:16"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T18%3A16&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sunset"><i class="fa fa-moon-o"></i> Approximate Sunset 18:17</div>
+
+                <div class="tee available" data-hour-val="18" data-min-val="24" data-teetime="2024-03-23 18:24">
+                    <div class="time theme_bg">
+                        18:24
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 18:24"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T18%3A24&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="18" data-min-val="32" data-teetime="2024-03-23 18:32">
+                    <div class="time theme_bg">
+                        18:32
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 18:32"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T18%3A32&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="18" data-min-val="40" data-teetime="2024-03-23 18:40">
+                    <div class="time theme_bg">
+                        18:40
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 18:40"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T18%3A40&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="18" data-min-val="48" data-teetime="2024-03-23 18:48">
+                    <div class="time theme_bg">
+                        18:48
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 18:48"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T18%3A48&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="tee available" data-hour-val="18" data-min-val="56" data-teetime="2024-03-23 18:56">
+                    <div class="time theme_bg">
+                        18:56
+                    </div>
+                    <div class="info">
+
+                        <div class="col-xs-12 col-sm-9">
+                            <div class="prices">
+                                <div class="price ball-1">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-2">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-3">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                                <div class="price ball-4">
+                                    <div class="icons">
+                                        <i class="fa fa-user fa1"></i>
+                                        <i class="fa fa-user fa2"></i>
+                                        <i class="fa fa-user fa3"></i>
+                                        <i class="fa fa-user fa4"></i>
+                                    </div>
+                                    <div class="value">0.00</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="controls">
+
+                                <a data-book="1" data-teetime-selected="2024-03-23 18:56"
+                                    href="/Visitors/BookingAdd?dateTime=2024-03-23T18%3A56&amp;courseId=12570&amp;startPoint=1&amp;crossOverStartPoint=0&amp;crossOverMinutes=0&amp;selectedHole=EighteenHoles"
+                                    class="btn btn-primary theme_bg theme_border_primary">Book</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div id="modal-social-booking-calendar" class="modal fade" role="dialog" style="display:none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header theme_bg">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">
+                                <i class="fa fa-calendar"></i> Calendar
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Select a date to view tee sheet.
+                            </p>
+                            <div class="left">
+                                <div class="calendar-container">
+                                </div>
+                            </div>
+                            <div class="right">
+                                <div class="controls">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-social-booking-course-select" class="modal fade" role="dialog" style="display:none;">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header theme_bg">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">
+                                <i class="fa fa-flag"></i> Select Course
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Select a course to view tee sheet.
+                            </p>
+                            <p>
+                                <input type="button" value="Wanstead" id="12570"
+                                    class="btn btn-select-course btn-primary theme_bg theme_border_primary" />
+                            </p>
+                            <input data-val="true" data-val-number="The field CurrentCourseID must be a number."
+                                data-val-required="The CurrentCourseID field is required." id="CurrentCourseID"
+                                name="CurrentCourseID" type="hidden" value="12570" />
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script id="template-calendar-members-booking" type="text/template">
+            <div>
+    <div class="controls">
+        <div class="clndr-previous-button">
+            <a class="btn btn-default btn-sm" href="#/"><i class="fa fa-chevron-left"></i></a>
+        </div>
+        <div class="month"><%= year %> <%= month %></div>
+        <div class="clndr-next-button">
+            <a class="btn btn-default btn-sm" href="#/"><i class="fa fa-chevron-right"></i></a>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="days-of-the-week">
+            <% _.each(daysOfTheWeek, function (day) { %>
+            <div class="header-day"><%= day %></div>
+            <% }); %>
+        </div>
+        <div class="days">
+            <% _.each(days, function (day) { %>
+                <a href="#/" class="<%= day.classes %>">
+                    <%= day.day %>
+                </a>
+            <% }); %>
+        </div>
+    </div>
+</div>
+        </script>
+        </div>
+
+    </div>
+    <div id="page-footer" class="text-center">
+        <footer>
+            <a href="#/" data-toggle="modal" data-target="#modal-club-contact-details"
+                class="theme_hover_text">Contact</a><span> | </span>
+            <a href="/Home/PrivacyPolicy" class="theme_hover_text">Privacy</a><span> | </span>
+            <a href="/Home/TermsAndConditions" class="theme_hover_text">Terms and Conditions</a><span> | </span>
+            <a href="https://membersapp.zendesk.com/hc/en-gb" target="_blank" class="theme_hover_text">Support</a>
+            <p>&copy;2024 - Club Systems International Ltd.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.domain = "hub.clubv1.com"; // Needed in order for passport.hub.clubv1.com to be able to pass info to [club].hub.clubv1.com
+    </script>
+    <script src="/bundles/jquery?v=BnaYCFGLKqxayY2OPw80e8sgPOJvsndDp5n7wz05o0Q1"></script>
+
+    <script src="/bundles/jqueryplugins?v=wU45Kt_5ChBO9zmGnsrS6fTfYbPlyjCUhB0W37In5pE1"></script>
+
+    <script src="/bundles/bootstrap?v=-g7cxTWQV6ve_iRyKtg7LoBytQltgj_w8zTNeaLaBc41"></script>
+
+    <script src="/bundles/cv1hub-core?v=UFhxJi6uJfnsCHPouIsbAiSGZyE1bTEJae_MeNCLvxo1"></script>
+
+
+
+
+
+
+    <script src="/bundles/signalr?v=wAK3L-KaxQVGTdNml8mY4auRZO3mO0pMmub_zI9HfnM1"></script>
+
+    <script src="/bundles/cv1hub-booking?v=7hIsDf1mt1NZUBEwrjj4IWPNZAYV8CMT7esC5uinDkU1"></script>
+
+    <script src="https://www.clubv1.com/signalr/hubs"></script>
+
+    <script type="text/javascript">
+        initViewBookingTeeSheet({
+            selectedDate: "2024-03-23",
+            baseUrl: "https://wanstead.hub.clubv1.com/Visitors/TeeSheet?date=",
+            signalR: "https://www.clubv1.com/signalr",
+            courseId: "12570",
+            clubId: 7261,
+            currentStartPoint: "1"
+        });
+    </script>
+
+
+
+    <script type="text/javascript">
+        if (typeof (csUtilities) === "object") {
+            csUtilities.setDeepLink({
+                targetElements: ".club-forum-deep-link"
+            });
+        }
+    </script>
+
+
+    <script>
+        $(document).on("click", "#nav-unlink", function (e) {
+            e.preventDefault();
+            var modalContent = "Are you sure you want to unlink from this hub? It will not appear on the club choice page, but you can re-link at any time.";
+            mootler.modal({
+                containerType: "standard",
+                inputType: "okCancel",
+                modalTitle: "<i class='fa fa-list'></i> Unlink from Club",
+                modalMessage: modalContent,
+                onConfirm: function () {
+                    $.ajax({
+                        url: "/Account/UnlinkClub",
+                        async: true,
+                        success: function () {
+                            window.location.href = '//default.hub.clubv1.com';
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+
+    <div id="modal-club-contact-details" class="modal fade" role="dialog" style="display:none;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header theme_bg">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">
+                        <i class="fa fa-info-circle"></i> Contact
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <b>Wanstead Golf Club</b> (WansteadGC)<br />
+                        Overton Drive,
+                        Wanstead,
+                        London,
+                        ,
+                        E11 2LW,
+
+                    </p>
+                    <div class="tiles">
+                        <div class="row">
+                            <a class="tile col-xs-6 col-sm-4" href="#/"
+                                data-url="http://maps.google.com/?q=51.571,0.0337">
+                                <div class="content theme_gradient theme_border_primary">
+                                    <div class="bkg theme_bg_icon"><i class="fa fa-map"></i></div>
+                                    <label class="theme_border_primary">Map</label>
+                                    <div class="value theme_border_primary"></div>
+                                </div>
+                            </a>
+                            <a class="tile col-xs-6 col-sm-4" href="mailto:info@wansteadgolfclub.com">
+                                <div class="content theme_gradient theme_border_primary">
+                                    <div class="bkg theme_bg_icon"><i class="fa fa-envelope"></i></div>
+                                    <label class="theme_border_primary">Email</label>
+                                    <div class="value theme_border_primary"></div>
+                                </div>
+                            </a>
+                            <a class="tile col-xs-6 col-sm-4" href="tel:0208 989 3938">
+                                <div class="content theme_gradient theme_border_primary">
+                                    <div class="bkg theme_bg_icon"><i class="fa fa-phone"></i></div>
+                                    <label class="theme_border_primary">Phone</label>
+                                    <div class="value theme_border_primary"></div>
+                                </div>
+                            </a>
+                            <a class="tile col-xs-6 col-sm-4" href="/Club/Members">
+                                <div class="content theme_gradient theme_border_primary">
+                                    <div class="bkg theme_bg_icon"><i class="fa fa-users"></i></div>
+                                    <label class="theme_border_primary">Members</label>
+                                    <div class="value theme_border_primary"></div>
+                                </div>
+                            </a>
+                            <a class="tile col-xs-6 col-sm-4" href="#/"
+                                data-url="https://www.facebook.com/wansteadgolfclub">
+                                <div class="content theme_gradient theme_border_primary">
+                                    <div class="bkg theme_bg_icon"><i class="fa fa-facebook"></i></div>
+                                    <label class="theme_border_primary">Facebook</label>
+                                    <div class="value theme_border_primary"></div>
+                                </div>
+                            </a>
+                            <a class="tile col-xs-6 col-sm-4" href="#/" data-url="https://twitter.com/wansteadgolf">
+                                <div class="content theme_gradient theme_border_primary">
+                                    <div class="bkg theme_bg_icon"><i class="fa fa-twitter"></i></div>
+                                    <label class="theme_border_primary">Twitter</label>
+                                    <div class="value theme_border_primary"></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="controls">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
