@@ -39,9 +39,27 @@ class ChromeService:
             WebDriverWait(self.driver, 30).until(
                 lambda driver: driver.execute_script('return document.readyState') == 'complete'
             )
-            return self.driver.page_source
+            return self.driver
         except Exception:
             traceback.print_exc()
+
+    def click_privacy_and_wait(self):
+        try:
+            privacy_button = WebDriverWait(self.driver, 10).until(
+                EC.element_to_be_clickable((By.CSS_SELECTOR, '[data-role="b_agree"]'))
+            )
+            if privacy_button:
+                privacy_button.click()
+
+                WebDriverWait(self.driver, 30).until(
+                    lambda driver: driver.execute_script('return document.readyState') == 'complete'
+                )
+            return self.driver
+        except Exception:
+            traceback.print_exc()
+
+    def get_page_source(self):
+        return self.driver.page_source
 
     def close(self):
         self.driver.quit()
