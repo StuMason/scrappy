@@ -58,6 +58,9 @@ class ChromeService:
         except Exception:
             traceback.print_exc()
 
+    def find_by_xpath(self, xpath):
+        return self.driver.find_element(By.XPATH, xpath)
+
     def get_page_source(self):
         return self.driver.page_source
 
