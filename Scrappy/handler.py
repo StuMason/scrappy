@@ -1,6 +1,6 @@
 import json
 import traceback
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup, Comment
 from chrome_service import ChromeService
 from urllib.parse import urlparse, parse_qs
 
@@ -38,7 +38,13 @@ def handle(event, context):
             scraped_course = scrape_website(course["url"])
             course_soup = BeautifulSoup(scraped_course, features="html.parser")
             course_info = extract_course_info(course_soup, course)
-            courses.append(course_info)
+            staging_data = {
+                'scrape_url': course["url"],
+                'scrape_id': course_info["scrape_id"],
+                'scrape_content': course_info,
+                'processed': False
+            }
+            courses.append(staging_data)
         return json.dumps(courses)
     except Exception:
         error_message = "An error occurred while processing the request."
@@ -112,12 +118,15 @@ def extract_course_info(soup, course_info):
         ):
             tag.decompose()
 
+        remove_ads = soup.find_all("div", {"id": "section_content_970", "class": "nowrap"})
+        for div in remove_ads[-3:]:
+            div.decompose()
+
         content_text = (
             soup.get_text()
             .strip()
             .replace("\n", " ")
             .replace("\r", " ")
-            .replace("\t", " ")
         )
 
         course = {
