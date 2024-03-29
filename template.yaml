@@ -17,7 +17,13 @@ Resources:
       MemorySize: 2048
       Timeout: 29
       FunctionUrlConfig:
-        AuthType: NONE
+        AuthType: AWS_IAM
+  ScrappyNomadPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      Action: lambda:InvokeFunctionUrl
+      FunctionName: !Ref ScrappyFunction
+      Principal: arn:aws:iam::328601198472:role/laravel-vapor-role
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
