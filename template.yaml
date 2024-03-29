@@ -15,7 +15,7 @@ Resources:
       MemorySize: 1024
       Timeout: 300
       FunctionUrlConfig:
-        AuthType: NONE
+        AuthType: AWS_IAM
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

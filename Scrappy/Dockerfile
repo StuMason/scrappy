@@ -22,6 +22,6 @@ COPY requirements.txt ./
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt -t .
 
-COPY *.py ./
+COPY ./ ./
 
 CMD ["handler.handle"]
