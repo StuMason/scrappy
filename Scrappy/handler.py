@@ -4,18 +4,23 @@ from platforms.clubv1.tee_times import handle as handle_clubv1
 
 
 def handle(event, context):
+    """
+    {
+        "platform": "clubv1",
+        "url": "https://www.example.com/lkjlkj",
+        "date": "2021-12-25"
+    }
+    """
     try:
-        """
-        {
-            "platform": "clubv1",
-            "url": "https://www.example.com/lkjlkj",
-            "date": "2021-12-25"
-        }
-        """
-        platform = event.get("platform")
+        print(event)
+        body = json.loads(event.get("body"))
+        print(body)
+        platform = body.get("platform")
         if platform == "clubv1":
-            return handle_clubv1(event)
+            print(*"Handling clubv1 platform")
+            return handle_clubv1(body)
         else:
+            print("Unsupported platform")
             return {
                 "statusCode": 400,
                 "body": json.dumps({"message": "Unsupported platform"}),

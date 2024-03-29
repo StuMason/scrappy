@@ -14,6 +14,7 @@ def handle(event):
         endpoint = root_url + parsed_url.path + "?" + urlencode(query_params)
         content = scrape_website(endpoint)
         soup = BeautifulSoup(content, features="html.parser")
+        print("Getting Tee Times for " + date + " from " + url + " ...")
         tee_times = get_tee_times(soup, root_url)
         return {
             "statusCode": 200,
@@ -35,6 +36,7 @@ def scrape_website(endpoint):
     chrome.close()
     return source
 
+
 def get_tee_times(content, root_url):
     tee_times = []
     for available_tees in content.find_all('div', class_='tee available'):
@@ -45,6 +47,8 @@ def get_tee_times(content, root_url):
             value_div = ball_1_div.find('div', class_='value')
             if value_div:
                 cost_per_ball = value_div.text.strip()
+                if cost_per_ball == 0:
+                    continue
 
         tee_times.append({
             "time": tee_time.split(" ")[1],

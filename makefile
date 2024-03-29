@@ -8,3 +8,7 @@ build:
 
 invoke:
 	sam local invoke ScrappyFunction --event event.json > site.json
+
+deploy:
+	sam build --use-container
+	sam deploy --profile speakcloud
