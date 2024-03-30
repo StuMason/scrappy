@@ -1,6 +1,7 @@
 import json
 import traceback
 from platforms.clubv1.tee_times import handle as handle_clubv1
+import base64
 
 
 def handle(event, context):
@@ -12,8 +13,10 @@ def handle(event, context):
     }
     """
     try:
-        print(event)
-        body = json.loads(event.get("body"))
+        body_str = event.get("body")
+        if event.get("isBase64Encoded"):
+            body_str = base64.b64decode(body_str).decode("utf-8")
+        body = json.loads(body_str)
         print(body)
         platform = body.get("platform")
         if platform == "clubv1":
