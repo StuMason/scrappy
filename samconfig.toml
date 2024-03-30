@@ -15,8 +15,12 @@ lint = true
 
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
-confirm_changeset = true
+confirm_changeset = false
 resolve_s3 = true
+s3_prefix = "scrappy"
+region = "eu-west-1"
+profile = "speakcloud"
+image_repositories = ["ScrappyFunction=328601198472.dkr.ecr.eu-west-1.amazonaws.com/scrappy2951b7cf/scrappyfunctionbf5035f2repo"]
 
 [default.package.parameters]
 resolve_s3 = true

@@ -1,2 +1,6 @@
-selenium==4.11
-beautifulsoup4==4.12
+selenium==4.19
+beautifulsoup4==4.12.3
+botocore
+boto3
+requests
+urllib3
