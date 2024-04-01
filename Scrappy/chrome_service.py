@@ -47,11 +47,16 @@ class ChromeService:
         except Exception:
             traceback.print_exc()
 
-    def get_loaded_source(self):
+    def wait(self):
         try:
             WebDriverWait(self.driver, 30).until(
                 lambda driver: driver.execute_script('return document.readyState') == 'complete'
             )
+        except Exception:
+            traceback.print_exc()
+
+    def get_loaded_source(self):
+        try:
             return self.driver.page_source
         except Exception:
             traceback.print_exc()
