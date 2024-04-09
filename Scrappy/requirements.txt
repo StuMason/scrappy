@@ -4,3 +4,4 @@ botocore
 boto3
 requests
 urllib3
+pendulum

@@ -6,9 +6,16 @@ build:
 	docker build -f Scrappy/Dockerfile -t "scrappy:latest" Scrappy
 	sam build --use-container
 
-invoke:
-	sam local invoke ScrappyFunction --event event.json > site.json
+invokeclub:
+	sam local invoke ScrappyFunction --event event_clubv1.json > site.json
+
+invokebrs:
+	sam local invoke ScrappyFunction --event event_brs.json > site.json
 
 deploy:
 	sam build --use-container
 	sam deploy --profile speakcloud
+
+localstack:
+	localstack start -d
+	aws s3 mb s3://test --profile localstack

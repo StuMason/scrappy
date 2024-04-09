@@ -1,6 +1,7 @@
 import json
 import traceback
 from platforms.clubv1.tee_times import handle as handle_clubv1
+from platforms.brs.tee_times import handle as handle_brs
 import base64
 
 
@@ -22,6 +23,9 @@ def handle(event, context):
         if platform == "clubv1":
             print(*"Handling clubv1 platform")
             return handle_clubv1(body)
+        if platform == "brs":
+            print("Handling brs platform")
+            return handle_brs(body)
         else:
             print("Unsupported platform")
             return {

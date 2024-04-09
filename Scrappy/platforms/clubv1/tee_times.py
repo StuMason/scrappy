@@ -32,6 +32,7 @@ def handle(event):
 def scrape_website(endpoint):
     chrome = ChromeService()
     chrome.get_url(endpoint)
+    chrome.wait()
     source = chrome.get_loaded_source()
     chrome.close()
     return source

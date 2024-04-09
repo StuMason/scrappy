@@ -1,0 +1,42 @@
+{
+    "version": "2.0",
+    "routeKey": "$default",
+    "rawPath": "/",
+    "rawQueryString": "",
+    "headers": {
+        "content-length": "99",
+        "x-amzn-tls-version": "TLSv1.3",
+        "x-forwarded-proto": "https",
+        "postman-token": "129444c7-8942-4498-9081-f0af596316fd",
+        "x-forwarded-port": "443",
+        "x-forwarded-for": "54.86.50.139",
+        "accept": "*/*",
+        "x-amzn-tls-cipher-suite": "TLS_AES_128_GCM_SHA256",
+        "x-amzn-trace-id": "Root=1-6606bdfc-7019e1b8597f535711dd4b9e",
+        "host": "6n7g63vr6b6acrukqpinghl62e0hejjq.lambda-url.eu-west-1.on.aws",
+        "content-type": "application/json",
+        "cache-control": "no-cache",
+        "accept-encoding": "gzip, deflate, br",
+        "user-agent": "PostmanRuntime/7.37.0"
+    },
+    "requestContext": {
+        "accountId": "anonymous",
+        "apiId": "6n7g63vr6b6acrukqpinghl62e0hejjq",
+        "domainName": "6n7g63vr6b6acrukqpinghl62e0hejjq.lambda-url.eu-west-1.on.aws",
+        "domainPrefix": "6n7g63vr6b6acrukqpinghl62e0hejjq",
+        "http": {
+            "method": "POST",
+            "path": "/",
+            "protocol": "HTTP/1.1",
+            "sourceIp": "54.86.50.139",
+            "userAgent": "PostmanRuntime/7.37.0"
+        },
+        "requestId": "71153de6-c689-49f6-9a0a-245afd25e9b0",
+        "routeKey": "$default",
+        "stage": "$default",
+        "time": "29/Mar/2024:13:11:24 +0000",
+        "timeEpoch": 1711717884234
+    },
+    "body": "{\"platform\":\"brs\",\"url\": \"https://visitors.brsgolf.com/woolstonmanor#/course/1\",\"date\":\"2024-05-03\"}",
+    "isBase64Encoded": false
+}
