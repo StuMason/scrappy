@@ -15,3 +15,7 @@ invokebrs:
 deploy:
 	sam build --use-container
 	sam deploy --profile speakcloud
+
+localstack:
+	localstack start -d
+	aws s3 mb s3://test --profile localstack

@@ -1,3 +1,5 @@
 pytest
 boto3
 requests
+localstack
+aws-sam-cli-local
