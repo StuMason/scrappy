@@ -18,6 +18,9 @@ Resources:
       Timeout: 29
       FunctionUrlConfig:
         AuthType: AWS_IAM
+      Environment:
+        Variables:
+          APP_ENV: local
   ScrappyNomadPermission:
     Type: AWS::Lambda::Permission
     Properties:

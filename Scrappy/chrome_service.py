@@ -14,19 +14,24 @@ from selenium.common.exceptions import TimeoutException
 
 class ChromeService:
     def __init__(self):
+        if os.environ.get("APP_ENV") == "local":
+            self.client = boto3.client(
+                "s3",
+                aws_access_key_id="test",
+                aws_secret_access_key="test",
+                region_name="us-east-1",
+                endpoint_url="http://host.docker.internal:4566"
+            )
+        else:
+            self.client = boto3.client("s3")
+        self.executable_path = "/opt/chromedriver"
+        self.binary_location = "/opt/chrome/chrome"
         self.driver = self._init_driver()
-        self.client = boto3.client(
-            "s3",
-            aws_access_key_id="test",
-            aws_secret_access_key="test",
-            region_name="us-east-1",
-            endpoint_url="http://host.docker.internal:4566"
-        )
 
     def _init_driver(self):
         chrome_options = webdriver.ChromeOptions()
         chrome_options = self._configure_options(chrome_options)
-        service = Service(executable_path="/opt/chromedriver")
+        service = Service(executable_path=self.executable_path)
         return webdriver.Chrome(service=service, options=chrome_options)
 
     def _configure_options(self, chrome_options):
@@ -45,8 +50,7 @@ class ChromeService:
         chrome_options.add_argument("--no-cache")
         chrome_options.add_argument("--dns-prefetch-disable")
         chrome_options.add_argument("--window-size=1920x1920")
-
-        chrome_options.binary_location = "/opt/chrome/chrome"
+        chrome_options.binary_location = self.binary_location
         return chrome_options
 
     def get_url(self, url):
