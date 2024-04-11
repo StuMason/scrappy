@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
     }
     console.log(body);
     const platform = body.platform;
-    if (platform === "clubv1") {
+    if (platform === "c lubv1") {
       console.log("Handling clubv1 platform");
       return await handleClubv1(body);
     } else {
