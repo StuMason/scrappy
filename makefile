@@ -1,5 +1,6 @@
 install:
 	pip install -r Scrappy/requirements.txt
+	pip install -r Playwright/requirements.txt
 	pip install -r tests/requirements.txt
 
 build:
@@ -8,6 +9,9 @@ build:
 
 invoke:
 	sam local invoke ScrappyFunction --event event.json > site.json
+
+pw:
+	sam local invoke PlaywrightFunction --event event.json > pwsite.json
 
 deploy:
 	sam build --use-container

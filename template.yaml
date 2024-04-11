@@ -4,25 +4,45 @@ Description: >
   scrappy scraper
 
 Resources:
-  ScrappyFunction:
+  # ScrappyFunction:
+  #   Type: AWS::Serverless::Function
+  #   Metadata:
+  #     Dockerfile: Dockerfile
+  #     DockerContext: ./Scrappy
+  #   Properties:
+  #     PackageType: Image
+  #     ImageUri: scrappy:latest
+  #     EphemeralStorage:
+  #       Size: 4096
+  #     MemorySize: 2048
+  #     Timeout: 29
+  #     FunctionUrlConfig:
+  #       AuthType: AWS_IAM
+  # ScrappyNomadPermission:
+  #   Type: AWS::Lambda::Permission
+  #   Properties:
+  #     Action: lambda:InvokeFunctionUrl
+  #     FunctionName: !Ref ScrappyFunction
+  #     Principal: arn:aws:iam::328601198472:role/laravel-vapor-role
+  PlaywrightFunction:
     Type: AWS::Serverless::Function
     Metadata:
       Dockerfile: Dockerfile
-      DockerContext: ./Scrappy
+      DockerContext: ./Playwright
     Properties:
       PackageType: Image
-      ImageUri: scrappy:latest
+      ImageUri: playwright:latest
       EphemeralStorage:
-        Size: 4096
-      MemorySize: 2048
+        Size: 2048
+      MemorySize: 1024
       Timeout: 29
       FunctionUrlConfig:
         AuthType: AWS_IAM
-  ScrappyNomadPermission:
+  PlaywrightPermission:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunctionUrl
-      FunctionName: !Ref ScrappyFunction
+      FunctionName: !Ref PlaywrightFunction
       Principal: arn:aws:iam::328601198472:role/laravel-vapor-role
 
 Outputs:
