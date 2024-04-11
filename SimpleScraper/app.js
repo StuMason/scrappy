@@ -1,26 +1,30 @@
-const chromium = require('chrome-aws-lambda');
-const playwright = require('playwright-core');
+const { handleClubv1 } = require("./clubv1");
 
 exports.handler = async (event, context) => {
-  
-  const browser = await playwright.chromium.launch({
-    args: chromium.args,
-    executablePath: await chromium.executablePath,
-    headless: chromium.headless,
-  });
-
   try {
-    const context = await browser.newContext();
-
-    const page = await context.newPage();
-    await page.goto(event.url || "https://example.com");
-
-    console.log("Page title: ", await page.title());
-  } catch (error) {
-    throw error;
-  } finally {
-    if (browser) {
-      await browser.close();
+    let body = event.body;
+    if (event.isBase64Encoded) {
+      const decodedBody = Buffer.from(body, "base64").toString("utf-8");
+      body = JSON.parse(decodedBody);
+    } else {
+      body = JSON.parse(body);
     }
+    console.log(body);
+    const platform = body.platform;
+    if (platform === "clubv1") {
+      console.log("Handling clubv1 platform");
+      return await handleClubv1(body);
+    } else {
+      console.log("Unsupported platform");
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ message: "Unsupported platform" }),
+      };
+    }
+  } catch (error) {
+    const errorMessage = "An error occurred while processing the request.";
+    console.log(errorMessage);
+    console.log(error.stack);
+    return { statusCode: 500, body: JSON.stringify({ message: errorMessage }) };
   }
-};
+}
