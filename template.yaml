@@ -24,25 +24,41 @@ Resources:
   #     Action: lambda:InvokeFunctionUrl
   #     FunctionName: !Ref ScrappyFunction
   #     Principal: arn:aws:iam::328601198472:role/laravel-vapor-role
-  PlaywrightFunction:
+  # PlaywrightFunction:
+  #   Type: AWS::Serverless::Function
+  #   Metadata:
+  #     Dockerfile: Dockerfile
+  #     DockerContext: ./Playwright
+  #   Properties:
+  #     PackageType: Image
+  #     ImageUri: playwright:latest
+  #     EphemeralStorage:
+  #       Size: 2048
+  #     MemorySize: 1024
+  #     Timeout: 29
+  #     FunctionUrlConfig:
+  #       AuthType: AWS_IAM
+  # PlaywrightPermission:
+  #   Type: AWS::Lambda::Permission
+  #   Properties:
+  #     Action: lambda:InvokeFunctionUrl
+  #     FunctionName: !Ref PlaywrightFunction
+  #     Principal: arn:aws:iam::328601198472:role/laravel-vapor-role
+  SimpleScraper:
     Type: AWS::Serverless::Function
-    Metadata:
-      Dockerfile: Dockerfile
-      DockerContext: ./Playwright
     Properties:
-      PackageType: Image
-      ImageUri: playwright:latest
-      EphemeralStorage:
-        Size: 2048
-      MemorySize: 1024
-      Timeout: 29
+      CodeUri: SimpleScraper/
+      Runtime: nodejs18.x
+      Handler: app.handler
+      MemorySize: 2048
+      Timeout: 300
       FunctionUrlConfig:
         AuthType: AWS_IAM
-  PlaywrightPermission:
+  SimpleScraperPermission:
     Type: AWS::Lambda::Permission
     Properties:
       Action: lambda:InvokeFunctionUrl
-      FunctionName: !Ref PlaywrightFunction
+      FunctionName: !Ref SimpleScraperFunction
       Principal: arn:aws:iam::328601198472:role/laravel-vapor-role
 
 Outputs:

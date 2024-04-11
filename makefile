@@ -10,8 +10,9 @@ build:
 invoke:
 	sam local invoke ScrappyFunction --event event.json > site.json
 
-pw:
-	sam local invoke PlaywrightFunction --event event.json > pwsite.json
+ss:
+	sam build --use-container
+	sam local invoke SimpleScraper --event event.json > site.json
 
 deploy:
 	sam build --use-container
